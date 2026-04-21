@@ -38,3 +38,7 @@ yarn-error.log*
 # Logs
 *.log
 \n# Data and Models\nPlantVillage-Dataset/\nbackend/data/\n*.pth\n*.pt
+
+
+backend
+PlantVillage-Dataset

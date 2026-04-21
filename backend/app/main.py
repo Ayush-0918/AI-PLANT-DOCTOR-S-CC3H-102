@@ -208,18 +208,21 @@ class PaymentRequest(BaseModel):
 async def seed_database():
     if db is None:
         return
-    if await db.products.count_documents({}) == 0:
-        print("🌱 Seeding Products...")
-        await db.products.insert_many([
-            {"title": "Bayer Fungicide Plus", "description": "Broad-spectrum disease control", "price": "₹450", "category": "Medicines", "rating": 4.8, "reviews": 128, "seller": "AgriGrow Supply", "sellerBadge": "Verified", "image": "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=400", "stock": 42},
-            {"title": "Syngenta Isabion", "description": "Amino acid organic biostimulant", "price": "₹1200", "category": "Medicines", "rating": 4.9, "reviews": 312, "seller": "FarmCare Direct", "sellerBadge": "Premium", "image": "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?q=80&w=400", "stock": 15},
-            {"title": "Neem Oil Extract 100%", "description": "Natural pest deterrent for early stages", "price": "₹250", "category": "Medicines", "rating": 4.5, "reviews": 89, "seller": "Green Earth", "sellerBadge": "Eco", "image": "https://images.unsplash.com/photo-1615485906371-d64e9a3b6d08?q=80&w=400", "stock": 100},
-            {"title": "Mahindra Tractor 275 DI", "description": "39 HP robust farming tractor", "price": "₹5,50,000", "category": "Machines", "rating": 4.5, "reviews": 46, "seller": "Mahindra Auth. Dealer", "sellerBadge": "Official", "image": "https://images.unsplash.com/photo-1533227268408-a774693194a8?q=80&w=400", "stock": 5},
-            {"title": "John Deere 5050E", "description": "50 HP heavy duty tractor with EMI option", "price": "₹8,20,000", "category": "Machines", "rating": 4.7, "reviews": 23, "seller": "JD Agromotors", "sellerBadge": "Verified", "image": "https://images.unsplash.com/photo-1594489428504-5c0c480a15fd?q=80&w=400", "stock": 2},
-            {"title": "Premium Combine Harvester", "description": "High yield crop harvesting machine", "price": "₹1500/hr", "category": "Rental", "rating": 4.6, "reviews": 75, "seller": "Kisan Rentals", "sellerBadge": "Trusted", "image": "https://images.unsplash.com/photo-1517404212739-650058e578f2?q=80&w=400", "stock": 10},
-            {"title": "Laser Land Leveler", "description": "Precision land leveling for better watering", "price": "₹800/hr", "category": "Rental", "rating": 4.8, "reviews": 112, "seller": "AgriTech Services", "sellerBadge": "Top Rated", "image": "https://images.unsplash.com/photo-1444858291040-58f756a3bcd6?q=80&w=400", "stock": 8},
-        ])
-    await db.scans.create_index([("location", "2dsphere")])
+    try:
+        if await db.products.count_documents({}) == 0:
+            print("🌱 Seeding Products...")
+            await db.products.insert_many([
+                {"title": "Bayer Fungicide Plus", "description": "Broad-spectrum disease control", "price": "₹450", "category": "Medicines", "rating": 4.8, "reviews": 128, "seller": "AgriGrow Supply", "sellerBadge": "Verified", "image": "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=400", "stock": 42},
+                {"title": "Syngenta Isabion", "description": "Amino acid organic biostimulant", "price": "₹1200", "category": "Medicines", "rating": 4.9, "reviews": 312, "seller": "FarmCare Direct", "sellerBadge": "Premium", "image": "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?q=80&w=400", "stock": 15},
+                {"title": "Neem Oil Extract 100%", "description": "Natural pest deterrent for early stages", "price": "₹250", "category": "Medicines", "rating": 4.5, "reviews": 89, "seller": "Green Earth", "sellerBadge": "Eco", "image": "https://images.unsplash.com/photo-1615485906371-d64e9a3b6d08?q=80&w=400", "stock": 100},
+                {"title": "Mahindra Tractor 275 DI", "description": "39 HP robust farming tractor", "price": "₹5,50,000", "category": "Machines", "rating": 4.5, "reviews": 46, "seller": "Mahindra Auth. Dealer", "sellerBadge": "Official", "image": "https://images.unsplash.com/photo-1533227268408-a774693194a8?q=80&w=400", "stock": 5},
+                {"title": "John Deere 5050E", "description": "50 HP heavy duty tractor with EMI option", "price": "₹8,20,000", "category": "Machines", "rating": 4.7, "reviews": 23, "seller": "JD Agromotors", "sellerBadge": "Verified", "image": "https://images.unsplash.com/photo-1594489428504-5c0c480a15fd?q=80&w=400", "stock": 2},
+                {"title": "Premium Combine Harvester", "description": "High yield crop harvesting machine", "price": "₹1500/hr", "category": "Rental", "rating": 4.6, "reviews": 75, "seller": "Kisan Rentals", "sellerBadge": "Trusted", "image": "https://images.unsplash.com/photo-1517404212739-650058e578f2?q=80&w=400", "stock": 10},
+                {"title": "Laser Land Leveler", "description": "Precision land leveling for better watering", "price": "₹800/hr", "category": "Rental", "rating": 4.8, "reviews": 112, "seller": "AgriTech Services", "sellerBadge": "Top Rated", "image": "https://images.unsplash.com/photo-1444858291040-58f756a3bcd6?q=80&w=400", "stock": 8},
+            ])
+        await db.scans.create_index([("location", "2dsphere")])
+    except Exception as e:
+        print(f"⚠️ Seeding failed or DB unreachable: {e}")
 
 
 @app.on_event("startup")

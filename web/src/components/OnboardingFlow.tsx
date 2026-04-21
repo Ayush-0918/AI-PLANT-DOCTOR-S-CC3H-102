@@ -326,12 +326,32 @@ export default function OnboardingFlow() {
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(currentLanguage.preview);
     utterance.lang = getSpeechLangCode(language);
-    utterance.rate = 1;
-    utterance.pitch = 1.02;
+    utterance.rate = 0.9; // Slightly slower for better clarity
+    utterance.pitch = 1.0;
     utterance.onend = () => setIsSpeakingPreview(false);
     utterance.onerror = () => setIsSpeakingPreview(false);
     window.speechSynthesis.speak(utterance);
   };
+
+  const stopSpeaking = () => {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    setIsSpeakingPreview(false);
+  };
+
+  // Automatic speech when entering voice step
+  useEffect(() => {
+    if (step === 'voice') {
+      const timer = setTimeout(() => {
+        speakPreview();
+      }, 500); // Small delay for smooth transition
+      return () => {
+        clearTimeout(timer);
+        stopSpeaking();
+      };
+    }
+    return undefined;
+  }, [step, language]); // Re-run if language changes while on screen
 
   const requestLocation = async () => {
     if (!navigator.geolocation) {
@@ -702,11 +722,28 @@ export default function OnboardingFlow() {
                     <p className="text-lg font-bold text-slate-800">&ldquo;{currentLanguage.preview}&rdquo;</p>
                     
                     <button
-                      onClick={speakPreview}
-                      className="mt-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-bold text-slate-700 shadow-sm transition-all active:scale-95"
+                      onClick={isSpeakingPreview ? stopSpeaking : speakPreview}
+                      className={`mt-6 inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-bold shadow-sm transition-all active:scale-95 ${
+                        isSpeakingPreview 
+                          ? 'border-red-200 bg-red-50 text-red-600' 
+                          : 'border-slate-200 bg-white text-slate-700'
+                      }`}
                     >
-                      <Volume2 size={16} className={isSpeakingPreview ? 'animate-pulse text-blue-600' : ''} />
-                      {S.hearPreview}
+                      {isSpeakingPreview ? (
+                        <>
+                          <div className="flex gap-0.5 items-center mr-1">
+                            <span className="w-1 h-3 bg-red-500 animate-bounce" style={{ animationDelay: '0ms' }} />
+                            <span className="w-1 h-4 bg-red-500 animate-bounce" style={{ animationDelay: '150ms' }} />
+                            <span className="w-1 h-3 bg-red-500 animate-bounce" style={{ animationDelay: '300ms' }} />
+                          </div>
+                          Stop
+                        </>
+                      ) : (
+                        <>
+                          <Volume2 size={18} />
+                          {S.hearPreview}
+                        </>
+                      )}
                     </button>
                   </div>
                 </div>

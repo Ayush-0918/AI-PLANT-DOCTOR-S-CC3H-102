@@ -34,7 +34,7 @@ export function ExpertCallProvider({ children }: { children: ReactNode }) {
   const triggerCall = async () => {
     if (!phoneNumber) return;
     setStatus('loading');
-    
+
     try {
       const data = await fetchJson<{ success: boolean; message?: string }>(`/api/expert/call`, {
         method: 'POST',

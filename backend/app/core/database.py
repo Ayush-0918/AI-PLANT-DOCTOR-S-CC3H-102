@@ -21,7 +21,15 @@ async def init_database() -> bool:
         _database = None
         return False
     try:
-        _mongo_client = AsyncIOMotorClient(settings.mongo_uri, serverSelectionTimeoutMS=3000)
+        # Only use TLS if URI indicates it's a remote/secure connection
+        use_tls = "mongodb+srv" in settings.mongo_uri or "ssl=true" in settings.mongo_uri.lower() or "tls=true" in settings.mongo_uri.lower()
+        
+        _mongo_client = AsyncIOMotorClient(
+            settings.mongo_uri,
+            serverSelectionTimeoutMS=3000,
+            tls=use_tls,
+            tlsAllowInvalidCertificates=use_tls,
+        )
         await _mongo_client.admin.command("ping")
         _database = _mongo_client["plant_doctor"]
         return True
