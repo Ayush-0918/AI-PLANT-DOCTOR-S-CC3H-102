@@ -1,0 +1,317 @@
+{
+  "generated_at": "2026-04-02T06:07:09.379639+00:00",
+  "in_domain_dir": "/Users/aayu/Plant Doctors/PlantVillage-Dataset/lightweight/color",
+  "field_train_dir": "/Users/aayu/Plant Doctors/PlantVillage-Dataset/field/train",
+  "output_dir": "/Users/aayu/Plant Doctors/PlantVillage-Dataset/training_bundle/color",
+  "max_images_per_class": 100,
+  "field_share": 0.3,
+  "seed": 42,
+  "classes": [
+    {
+      "class_name": "Apple___Apple_scab",
+      "domain_available": 100,
+      "field_available": 77,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Apple___Black_rot",
+      "domain_available": 100,
+      "field_available": 0,
+      "domain_selected": 100,
+      "field_selected": 0,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Apple___Cedar_apple_rust",
+      "domain_available": 100,
+      "field_available": 79,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Apple___healthy",
+      "domain_available": 100,
+      "field_available": 82,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Blueberry___healthy",
+      "domain_available": 100,
+      "field_available": 100,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Cherry_(including_sour)___Powdery_mildew",
+      "domain_available": 100,
+      "field_available": 0,
+      "domain_selected": 100,
+      "field_selected": 0,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Cherry_(including_sour)___healthy",
+      "domain_available": 100,
+      "field_available": 47,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "domain_available": 100,
+      "field_available": 64,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Corn_(maize)___Common_rust_",
+      "domain_available": 100,
+      "field_available": 100,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Corn_(maize)___Northern_Leaf_Blight",
+      "domain_available": 100,
+      "field_available": 100,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Corn_(maize)___healthy",
+      "domain_available": 100,
+      "field_available": 0,
+      "domain_selected": 100,
+      "field_selected": 0,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Grape___Black_rot",
+      "domain_available": 100,
+      "field_available": 56,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Grape___Esca_(Black_Measles)",
+      "domain_available": 100,
+      "field_available": 0,
+      "domain_selected": 100,
+      "field_selected": 0,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "domain_available": 100,
+      "field_available": 0,
+      "domain_selected": 100,
+      "field_selected": 0,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Grape___healthy",
+      "domain_available": 100,
+      "field_available": 57,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Orange___Haunglongbing_(Citrus_greening)",
+      "domain_available": 100,
+      "field_available": 0,
+      "domain_selected": 100,
+      "field_selected": 0,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Peach___Bacterial_spot",
+      "domain_available": 100,
+      "field_available": 0,
+      "domain_selected": 100,
+      "field_selected": 0,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Peach___healthy",
+      "domain_available": 100,
+      "field_available": 100,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Pepper,_bell___Bacterial_spot",
+      "domain_available": 100,
+      "field_available": 62,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Pepper,_bell___healthy",
+      "domain_available": 100,
+      "field_available": 53,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Potato___Early_blight",
+      "domain_available": 100,
+      "field_available": 100,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Potato___Late_blight",
+      "domain_available": 100,
+      "field_available": 97,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Potato___healthy",
+      "domain_available": 100,
+      "field_available": 0,
+      "domain_selected": 100,
+      "field_selected": 0,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Raspberry___healthy",
+      "domain_available": 100,
+      "field_available": 100,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Soybean___healthy",
+      "domain_available": 100,
+      "field_available": 57,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Squash___Powdery_mildew",
+      "domain_available": 100,
+      "field_available": 100,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Strawberry___Leaf_scorch",
+      "domain_available": 100,
+      "field_available": 0,
+      "domain_selected": 100,
+      "field_selected": 0,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Strawberry___healthy",
+      "domain_available": 100,
+      "field_available": 88,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Tomato___Bacterial_spot",
+      "domain_available": 100,
+      "field_available": 98,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Tomato___Early_blight",
+      "domain_available": 100,
+      "field_available": 74,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Tomato___Late_blight",
+      "domain_available": 100,
+      "field_available": 100,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Tomato___Leaf_Mold",
+      "domain_available": 100,
+      "field_available": 85,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Tomato___Septoria_leaf_spot",
+      "domain_available": 100,
+      "field_available": 100,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Tomato___Spider_mites Two-spotted_spider_mite",
+      "domain_available": 100,
+      "field_available": 0,
+      "domain_selected": 100,
+      "field_selected": 0,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Tomato___Target_Spot",
+      "domain_available": 100,
+      "field_available": 0,
+      "domain_selected": 100,
+      "field_selected": 0,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+      "domain_available": 100,
+      "field_available": 69,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Tomato___Tomato_mosaic_virus",
+      "domain_available": 100,
+      "field_available": 44,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    },
+    {
+      "class_name": "Tomato___healthy",
+      "domain_available": 100,
+      "field_available": 54,
+      "domain_selected": 70,
+      "field_selected": 30,
+      "total_selected": 100
+    }
+  ],
+  "field_classes_ignored": [],
+  "total_selected": 3800
+}

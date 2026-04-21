@@ -1,0 +1,16 @@
+{
+  "model": "MobileNetV3_Large",
+  "model_version": "pv-mobilenetv3-20260402T061625Z-c38-t3040",
+  "training_preset": "light",
+  "dataset_path": "/Users/aayu/Plant Doctors/PlantVillage-Dataset/training_bundle/color",
+  "dataset_signature": "bed2d5142504fed0",
+  "dataset_classes": 38,
+  "epochs_trained": 1,
+  "train_samples": 3040,
+  "val_samples": 760,
+  "accuracy_pct": 81.84,
+  "status": "Verified Real AI",
+  "confusion_matrix_route": null,
+  "device": "cpu",
+  "weight_source": "existing-plantvillage-weights"
+}

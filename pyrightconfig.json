@@ -1,0 +1,13 @@
+{
+  "include": ["backend"],
+  "venvPath": ".",
+  "venv": ".venv",
+  "pythonVersion": "3.11",
+  "pythonPlatform": "Darwin",
+  "typeCheckingMode": "basic",
+  "reportMissingImports": "none",
+  "reportMissingModuleSource": "none",
+  "reportOptionalMemberAccess": "warning",
+  "reportOperatorIssue": "warning",
+  "extraPaths": ["backend", "backend/app"]
+}

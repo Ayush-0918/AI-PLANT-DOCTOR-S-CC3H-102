@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Downloads/PlantDoc-Dataset"
+		}
+	],
+	"settings": {
+		"python.languageServer": "Pylance",
+		"git.ignoreLimitWarning": true
+	}
+}

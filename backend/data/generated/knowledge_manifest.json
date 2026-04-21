@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-04-02T06:01:17.137044+00:00",
+  "treatment_knowledge_rows": 500,
+  "translation_rows": 1000,
+  "growth_care_rows": 720,
+  "crop_recommendation_rows": 540,
+  "fertilizer_recommendation_rows": 720,
+  "paths": {
+    "treatment_knowledge": "/Users/aayu/Plant Doctors/backend/data/generated/treatment_knowledge.csv",
+    "translations_core": "/Users/aayu/Plant Doctors/backend/data/generated/translations_core.csv",
+    "growth_care": "/Users/aayu/Plant Doctors/backend/data/generated/plant_growth_care_recommendations.csv",
+    "crop_recommendation": "/Users/aayu/Plant Doctors/backend/data/generated/crop_recommendation.csv",
+    "fertilizer_recommendation": "/Users/aayu/Plant Doctors/backend/data/generated/fertilizer_recommendation.csv"
+  },
+  "legacy_sync": {
+    "crop_recommendation": "/Users/aayu/Plant Doctors/backend/crop_recommendation.csv",
+    "fertilizer_recommendation": "/Users/aayu/Plant Doctors/backend/fertilizer_recommendation.csv"
+  }
+}

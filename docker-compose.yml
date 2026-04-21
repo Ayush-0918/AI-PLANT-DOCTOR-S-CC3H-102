@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: plant-doctors-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: plant-doctors-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+    volumes:
+      - ./backend:/app
+
+volumes:
+  mongo-data:
+
